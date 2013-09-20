@@ -1,23 +1,7 @@
-#!/bin/bash - 
-#===============================================================================
-#
-#          FILE: gce-up.sh
-# 
-#         USAGE: ./gce-up.sh 
-# 
-#   DESCRIPTION: 
-# 
-#       OPTIONS: ---
-#  REQUIREMENTS: ---
-#          BUGS: ---
-#         NOTES: ---
-#        AUTHOR: YOUR NAME (), 
-#  ORGANIZATION: 
-#       CREATED: 09/20/2013 12:45:54 PM PDT
-#      REVISION:  ---
-#===============================================================================
+#!/bin/bash 
+set -e
+set -x
 
-set -o nounset                              # Treat unset variables as an error
 wget -O /tmp/puppetlabs.repo http://apt.puppetlabs.com/puppetlabs-release-wheezy.deb
 dpkg -i /tmp/puppetlabs.repo
 apt-get update
