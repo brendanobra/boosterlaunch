@@ -32,5 +32,6 @@ mkdir -p /etc/facter/facts.d
 echo "role=appserver" >> /etc/facter/facts.d/role.txt
 echo "hiera_include(classes)" > /tmp/puppet.pp
 cp -R /tmp/boosterlaunch/automation/src/main/resources/puppet/modules/boosterlaunch /etc/puppet/modules
+
 puppet apply --debug /tmp/puppet.pp
 

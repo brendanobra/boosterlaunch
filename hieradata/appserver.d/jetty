@@ -1,7 +1,7 @@
 # Defaults for jetty see /etc/init.d/jetty for more
 
 # change to 0 to allow Jetty to start
-NO_START=1 
+NO_START=0 
 
 # change to 'no' or uncomment to use the default setting in /etc/default/rcS 
 VERBOSE=yes
@@ -25,10 +25,10 @@ VERBOSE=yes
 #JETTY_ARGS=
 
 # Extra options to pass to the JVM         
-#JAVA_OPTIONS="-Xmx256m -Djava.awt.headless=true"
+JAVA_OPTIONS="-Xmx2048m -Djava.awt.headless=true"
 
 # Home of Java installation.
-#JAVA_HOME=
+JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/
 
 # The first existing directory is used for JAVA_HOME (if JAVA_HOME is not
 # defined in /etc/default/jetty). Should contain a list of space separated directories.
