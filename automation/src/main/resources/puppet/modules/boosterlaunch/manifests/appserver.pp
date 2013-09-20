@@ -3,7 +3,7 @@ class boosterlaunch::appserver{
 		ensure => present,
 	}
 	package{'jetty':
-		require => [Package['openjdk-7-jdk']]
+		require => [Package['openjdk-7-jdk']],
 		ensure => 'present',
 	}
 	file{'/etc/default/jetty':
@@ -13,7 +13,7 @@ class boosterlaunch::appserver{
 	}
 	service{'jetty':
 		require => [File['/etc/default/jetty']],
-		ensure => 'started',
-		enabled => 'true'
+		ensure => 'running',
+		enable => 'true'
 	}
 }
