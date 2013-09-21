@@ -15,4 +15,4 @@ sudo echo "hiera_include(classes)" > /tmp/puppet.pp
 sudo cp -R /tmp/boosterlaunch/automation/src/main/resources/puppet/modules/boosterlaunch /etc/puppet/modules
 sudo puppet apply --debug /tmp/puppet.pp
 cd /tmp; unzip boosterlaunch-1.0-SNAPSHOT.zip 
-cd /tmp/boosterlaunch-1.0-SNAPSHOT;chmod +rx start; nohup ./start &
+cd /tmp/boosterlaunch-1.0-SNAPSHOT;chmod +rx start; nohup ./start & > /dev/null 2>&1
