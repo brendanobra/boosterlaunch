@@ -7,9 +7,9 @@ dpkg -i /tmp/puppetlabs.repo
 apt-get update
 apt-get install --assume-yes git
 cd /tmp; git clone https://github.com/brendanobra/boosterlaunch.git 
-cp /tmp/boosterlaunch/automation/src/main/resources/etc/puppet/hiera.yaml /etc/puppet
 apt-get install --assume-yes puppet
 gem install hiera-file
+cp /tmp/boosterlaunch/automation/src/main/resources/etc/puppet/hiera.yaml /etc/puppet
 mkdir -p /etc/puppet/hieradata
 cp -R /tmp/boosterlaunch/hieradata/* /etc/puppet/hieradata
 mkdir -p /etc/facter/facts.d
