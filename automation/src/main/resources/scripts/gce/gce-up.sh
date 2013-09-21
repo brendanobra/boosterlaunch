@@ -1,21 +1,15 @@
-#!/bin/bash 
-set -e
-set -x
-
-wget -O /tmp/puppetlabs.repo http://apt.puppetlabs.com/puppetlabs-release-wheezy.deb
-dpkg -i /tmp/puppetlabs.repo
-apt-get update
-apt-get install --assume-yes git
-cd /tmp; git clone https://github.com/brendanobra/boosterlaunch.git 
-apt-get install --assume-yes puppet
-gem install hiera-file
-cp /tmp/boosterlaunch/automation/src/main/resources/etc/puppet/hiera.yaml /etc/puppet
-mkdir -p /etc/puppet/hieradata
-cp -R /tmp/boosterlaunch/hieradata/* /etc/puppet/hieradata
-mkdir -p /etc/facter/facts.d
-echo "role=appserver" >> /etc/facter/facts.d/role.txt
-echo "hiera_include(classes)" > /tmp/puppet.pp
-cp -R /tmp/boosterlaunch/automation/src/main/resources/puppet/modules/boosterlaunch /etc/puppet/modules
-
-puppet apply --debug /tmp/puppet.pp
-
+wget -O /tmp/puppetlabs.repo http://apt.puppetlabs.com/puppetlabs-release-wheezy.deb\n
+dpkg -i /tmp/puppetlabs.repo\n
+apt-get update\n
+apt-get install --assume-yes git\n
+cd /tmp; git clone https://github.com/brendanobra/boosterlaunch.git\n 
+apt-get install --assume-yes puppet\n
+gem install hiera-file\n
+cp /tmp/boosterlaunch/automation/src/main/resources/etc/puppet/hiera.yaml /etc/puppet\n
+mkdir -p /etc/puppet/hieradata\n
+cp -R /tmp/boosterlaunch/hieradata/* /etc/puppet/hieradata\n
+mkdir -p /etc/facter/facts.d\n
+echo "role=appserver" >> /etc/facter/facts.d/role.txt\n
+echo "hiera_include(classes)" > /tmp/puppet.pp\n
+cp -R /tmp/boosterlaunch/automation/src/main/resources/puppet/modules/boosterlaunch /etc/puppet/modules\n
+puppet apply --debug /tmp/puppet.pp\n
