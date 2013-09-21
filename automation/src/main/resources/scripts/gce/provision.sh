@@ -14,7 +14,5 @@ sudo cp /tmp/role.txt /etc/facter/facts.d
 sudo echo "hiera_include(classes)" > /tmp/puppet.pp
 sudo cp -R /tmp/boosterlaunch/automation/src/main/resources/puppet/modules/boosterlaunch /etc/puppet/modules
 sudo puppet apply --debug /tmp/puppet.pp
-cd /tmp; unzip boo*.zip
-cd /tmp/boost*;
-chmod +rx start
-nohup /tmp/booster*/start &
+cd /tmp; unzip boosterlaunch-1.0-SNAPSHOT.zip 
+cd /tmp/boosterlaunch-1.0-SNAPSHOT;chmod +rx start; nohup ./start &
