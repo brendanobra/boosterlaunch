@@ -18,5 +18,6 @@
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
-gcutil addinstance --nopersistent_boot_disk --metadata_from_file=startup_script:gce-up.sh --image=debian-7 --machine_type=n1-standard-1  --zone=us-central2-a boosterlaunch
+STARTUP=`pwd`/gce-up.sh
+gcutil addinstance --nopersistent_boot_disk --metadata_from_file=startup_script:"${STARTUP}" --image=debian-7 --machine_type=n1-standard-1  --zone=us-central2-a boosterlaunch
 
